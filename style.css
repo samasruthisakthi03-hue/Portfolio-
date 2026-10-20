@@ -1,0 +1,209 @@
+:root {
+  --bg: #e9f3f2;
+  --card: #ffffff;
+  --ink: #14303a;
+  --muted: #50666d;
+  --teal: #0f5c63;
+  --teal-dark: #0a4147;
+  --soft: #d5e8e6;
+  --coral: #e0553a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg, #d9ecea 0%, var(--bg) 40%);
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 1.05rem;
+  padding: 0 14px 30px;
+}
+
+.wrap { max-width: 760px; margin: 0 auto; }
+
+/* Top name and menu */
+.site-title {
+  text-align: center;
+  font-size: 1.9rem;
+  color: var(--teal);
+  padding: 34px 0 16px;
+}
+
+nav {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 14px rgba(15, 92, 99, 0.12);
+}
+
+nav a {
+  background: var(--teal);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
+nav a:hover { background: var(--coral); }
+
+/* Cards */
+.card {
+  background: var(--card);
+  border-radius: 22px;
+  padding: 28px 24px;
+  margin-top: 22px;
+  box-shadow: 0 4px 14px rgba(15, 92, 99, 0.12);
+  scroll-margin-top: 14px;
+}
+
+.card h2 {
+  color: var(--teal);
+  font-size: 1.7rem;
+  margin-bottom: 14px;
+}
+
+.card p + p { margin-top: 12px; }
+
+/* Hero */
+.welcome {
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+
+.detect-box {
+  position: relative;
+  display: inline-block;
+  border: 3px solid var(--coral);
+  padding: 16px 18px;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  color: var(--teal);
+  font-size: clamp(1.8rem, 8vw, 2.6rem);
+  line-height: 1.2;
+}
+
+.role {
+  color: var(--coral);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  margin-top: 14px;
+  font-weight: 700;
+  color: var(--teal);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: var(--teal);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 11px 26px;
+  border-radius: 999px;
+}
+
+.btn:hover { background: var(--teal-dark); }
+
+/* Skills */
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
+
+.chips li {
+  background: var(--soft);
+  color: var(--teal-dark);
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 999px;
+}
+
+.chips li:hover { background: var(--teal); color: #fff; }
+
+/* Education */
+.edu { border-left: 5px solid var(--coral); padding-left: 16px; }
+.edu h3 { font-size: 1.2rem; color: var(--ink); }
+.edu .place { font-weight: 600; color: var(--teal); }
+.edu .status { color: var(--muted); margin-bottom: 8px; }
+
+/* Project picture made with CSS */
+.scan {
+  position: relative;
+  height: 130px;
+  background: #0d1b24;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.bone {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 28px;
+  transform: translate(-50%, -50%) rotate(-12deg);
+  background: linear-gradient(90deg, #8ea4b1, #c9d6dd, #8ea4b1);
+  border-radius: 20px;
+}
+
+.scan .detect-box {
+  position: absolute;
+  top: 26%;
+  left: 44%;
+  width: 64px;
+  height: 54px;
+  padding: 0;
+  margin: 0;
+  border-width: 2px;
+}
+
+/* A thin scanning line moves down the picture */
+.scan::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(120, 220, 230, 0.8);
+  box-shadow: 0 0 12px rgba(120, 220, 230, 0.9);
+  animation: scanline 3.5s linear infinite;
+}
+
+@keyframes scanline {
+  from { top: 0; }
+  to { top: 100%; }
+}
+
+.project h3 { font-size: 1.25rem; margin-bottom: 8px; }
+
+.tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.tags li { background: var(--soft); border-radius: 8px; padding: 2px 12px; font-size: 0.9rem; font-weight: 600; }
+
+/* Contact */
+.contact-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+.contact-links .btn { margin-top: 0; }
+.btn.outline { background: transparent; color: var(--teal); border: 2px solid var(--teal); }
+.btn.outline:hover { background: var(--teal); color: #fff; }
+
+footer { text-align: center; margin-top: 28px; color: var(--muted); font-size: 0.95rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .scan::after { animation: none; }
+  html { scroll-behavior: auto; }
+}
